@@ -311,11 +311,11 @@ const EventPageClient = ({ eventsId }: { eventsId: string }) => {
                   })}
                 </div>
               </div>
-              {/* {isPaidEvent && ( */}
+              {eventData?.[0]?.event_price > 0 && (
                 <Button onClick={handleOpenModal} className="bg-green-500 text-white">
                   Pay Now
                 </Button>
-              {/* )} */}
+              )}
               <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
                 {imageUrls.length > 0 ? (
                   <Image src={imageUrls[0]} alt="QR Code" width={200} height={200} />
